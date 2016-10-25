@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+	<bean id="buzonWebService" name="buzonWebService" class="org.springframework.remoting.jaxrpc.JaxRpcPortProxyFactoryBean" autowire="byName">
+      <!--  <property name="serviceFactoryClass">
+            <value>org.apache.axis.client.ServiceFactory</value>
+        </property> --> 
+        <property name="serviceInterface">
+            <value>com.gmt.EnviaMensajeBuzonService</value>
+        </property>
+        <property name="wsdlDocumentUrl">
+            <value>http://192.168.46.20:8080/cl-ti-iawsbuzon/ws-enviabuzon?WSDL</value>
+        </property>
+        <property name="namespaceUri">
+            <value>http://tempuri.org/</value>
+        </property>
+        <property name="serviceName">
+            <value>BuzonElectronicoAppFacade</value>
+        </property>
+        <property name="portName">
+            <value>BuzonElectronicoAppFacadePort</value>
+        </property>	    
+	</bean>
+	
+</beans>
